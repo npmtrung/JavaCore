@@ -33,9 +33,6 @@ public class App {
         b =  temp;
         System.out.println("Số a swap đúng là " + a + " Số b swap đúng là " + b);
     }
-
-
-
 };
 
 

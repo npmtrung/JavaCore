@@ -1,39 +1,39 @@
 import java.time.Year;
 
-public class Excercies {
+public class Excercies_01 {
     public static void main(String[] args) {
 
         //Bài 4
-        int CurrentYear = Year.now().getValue();
-        int BirthYear = 1994;
-        int age = CurrentYear - BirthYear;
-        System.out.println("Năm sinh: " + BirthYear);
+        int currentYear = Year.now().getValue();
+        int birthYear = 1994;
+        int age = currentYear - birthYear;
+        System.out.println("Năm sinh: " + birthYear);
         System.out.println("Tuổi hiện tại là: " + age);
         System.out.println("--------------------");
 
         //Bài 5
         int A = 5;
         int B = 10;
-        int Tong = A + B;
-        int Hieu = A - B;
-        double Tich = A * B;
-        double Thuong = (float) A / B;
+        int sum = A + B;
+        int sub = A - B;
+        int mul = A * B;
+        double div = (double) A / B;
         System.out.println("Số A: "+ A);
         System.out.println("Số B: "+ B);
-        System.out.println("Tổng của 2 số là: " + Tong);
-        System.out.println("Hiệu của 2 số là:" + Hieu);
-        System.out.println("Tích của 2 số là: " + Tich);
-        System.out.println("Thương của 2 số là: " + Thuong);
+        System.out.println("Tổng của 2 số là: " + sum);
+        System.out.println("Hiệu của 2 số là:" + sub);
+        System.out.println("Tích của 2 số là: " + mul);
+        System.out.println("Thương của 2 số là: " + div);
         System.out.println("--------------------");
 
         //Bài 6
-        String ProductName = "Kem Ốc Quế";
-        int Quantity = 10;
-        double UnitPrice = 7000;
-        double Price = Quantity * UnitPrice;;
-        double VAT= Price * 10/100;
-        System.out.println("Tên sản phẩm: " + ProductName + " Đơn giá: " + UnitPrice + " Số lượng: " + Quantity);
-        System.out.println("Giá tiền của sản phẩm là:" + Price);
+        String productName = "Kem Ốc Quế";
+        int quantity = 10;
+        double unitPrice = 7000;
+        double price = quantity * unitPrice;;
+        double VAT= price * 10/100;
+        System.out.println("Tên sản phẩm: " + productName + " Đơn giá: " + unitPrice + " Số lượng: " + quantity);
+        System.out.println("Giá tiền của sản phẩm là:" + price);
         System.out.println("Thuế giá trị gia tăng của sản phẩm là:" + VAT);
         System.out.println("--------------------");
 
