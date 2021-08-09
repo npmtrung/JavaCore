@@ -1,8 +1,10 @@
+package Excercises;
+
 import java.util.Scanner;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-public class Exercise_03 {
+public class Excercise_03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

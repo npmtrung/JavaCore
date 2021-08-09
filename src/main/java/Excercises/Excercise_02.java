@@ -1,8 +1,7 @@
+package Excercises;
+
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.Scanner;
-import static java.lang.Character.isLowerCase;
-import static java.lang.Character.isUpperCase;
 
 public class Excercise_02 {
     public static void main(String[] args) {
@@ -200,5 +199,6 @@ public class Excercise_02 {
         } else {
             System.out.println("Đây không phải tam giác");
         }
+
     }
 };
