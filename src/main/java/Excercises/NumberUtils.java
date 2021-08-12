@@ -1,4 +1,5 @@
 package Excercises;
+
 import java.security.PublicKey;
 import java.util.Scanner;
 
@@ -22,7 +23,7 @@ public class NumberUtils {
             reversed = reversed * 10 + digit;
             num1 /= 10;
         }
-        if(reversed == original) {
+        if (reversed == original) {
             return true;
         } else {
             return false;
@@ -65,8 +66,49 @@ public class NumberUtils {
         return reversed;
     }
 
-//    int n1;
-//    n = new Scanner.
+    public static int[] generateArray(int n, int min, int max) {
+        int[] ret1 = new int[n];
+        for (int i = 0; i < ret1.length; i++) {
+            ret1[i] = (int) Math.floor(Math.random() * (max - min)) + min;
+        }
+        return ret1;
+    }
+
+    public static int sumElements(int[] arr) {
+        int ret = 0;
+        for (int ele : arr) {
+            ret += ele;
+        }
+        return ret;
+    }
+
+    public static boolean isPrimeArray(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            if (!isPrimeNumber(arr[i]))
+                return false;
+        }
+        return true;
+    }
+
+    public static void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.format("%d ", arr[i]);
+        }
+        System.out.println();
+    }
+
+//    public static void sortArray(int[] array) {
+//        for (int i = 0; i < array.length - 1; i++) {
+//            for (int j = i + 1; j < array.length; j++) {
+//            }
+//            if (array[i] > array[j]) {
+//                int temp = array[i];
+//                array[i] = array[j];
+//                array[j] = temp;
+//            }
+//        }
+//    }
+
 }
 
 
