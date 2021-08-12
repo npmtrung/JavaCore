@@ -1,15 +1,20 @@
 package Excercises;
 
 import java.security.PublicKey;
+
 import java.util.Scanner;
 
 public class NumberUtils {
     public static boolean isPrimeNumber(int n) {
         boolean ret = true;
-        for (int i = 2; i < n; i++) {
-            if (n % i == 0) {
-                ret = false;
-                break;
+        if (n <= 1) {
+            ret = false;
+        } else {
+            for (int i = 2; i < n; i++) {
+                if (n % i == 0) {
+                    ret = false;
+                    break;
+                }
             }
         }
         return ret;
@@ -97,18 +102,33 @@ public class NumberUtils {
         System.out.println();
     }
 
-//    public static void sortArray(int[] array) {
-//        for (int i = 0; i < array.length - 1; i++) {
-//            for (int j = i + 1; j < array.length; j++) {
-//            }
-//            if (array[i] > array[j]) {
-//                int temp = array[i];
-//                array[i] = array[j];
-//                array[j] = temp;
-//            }
-//        }
-//    }
+    public static boolean isAscendingArray(int arr[]) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] >= arr[i + 1])
+                return false;
+        }
+        return true;
+    }
 
+    public static int countDivisible(int[] arr) {
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if ((arr[i] % 4 == 0) && (arr[i] % 5 != 0)) {
+                count += 1;
+            }
+        }
+        return count;
+    }
+
+    static int sumPrimeNumber(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (isPrimeNumber(arr[i])) {
+                sum += arr[i];
+            }
+        }
+        return sum;
+    }
 }
 
 
