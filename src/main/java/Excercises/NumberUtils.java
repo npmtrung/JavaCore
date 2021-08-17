@@ -129,6 +129,129 @@ public class NumberUtils {
         }
         return sum;
     }
+
+    public static int findMax(int[] arr) {
+        int max = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    public static int findMin(int[] arr) {
+        int min = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
+    public static int findMaxIndex(int[] arr) {
+        int idx = 0;
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > arr[idx]) {
+                idx = i;
+            }
+        }
+        return idx;
+    }
+
+    public static int findFirstNegativeIndex(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                return i;
+            }
+        }
+        return -1; //Không có phần tử âm
+    }
+
+    public static int findLastPositiveIndex(int[] arr) {
+        for (int i = arr.length - 1; i >= 0; i--) { //chạy ngược mảng i = arr.length - 1
+            if (arr[i] > 0) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int findMinPositiveIndex(int[] arr) {
+        int lastPosIdx = findLastPositiveIndex(arr);
+        if (lastPosIdx < 0) {
+            return -1;
+        }
+        int minPosIdx = lastPosIdx;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0 && arr[i] < arr[minPosIdx]) {
+                minPosIdx = i;
+            }
+        }
+        return minPosIdx;
+    }
+
+    public static int findMaxNegativeIndex(int[] arr) {
+        int maxNegIdx = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0 && (maxNegIdx == -1 || arr[i] > arr[maxNegIdx])) {
+                maxNegIdx = i;
+            }
+        }
+        return maxNegIdx;
+    }
+
+    public static void checkUppercaseChar(String s1) {
+        for (int i = 0; i < s1.length(); i++) {
+            if (Character.isUpperCase(s1.charAt(i))) {
+                System.out.format("Những kí tự in hoa trong chuỗi: %s\n", s1.charAt(i));
+            }
+        }
+    }
+
+    public static void checkNonNumeric(String s2) {
+        for (int i = 0; i < s2.length(); i++) {
+            if (Character.isLetter(s2.charAt(i))) {
+                System.out.format("Những kí tự không phải số trong chuỗi: %s\n", s2.charAt(i));
+            }
+        }
+    }
+
+    public static int countCharInString(String s, char c) {
+        int count = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == c)
+                count++;
+        }
+        return count;
+    }
+
+    public static int countWordInString(String string) {
+        int count = 0;
+        String[] s = string.split(" +");
+        return s.length;
+    }
+
+    public static void countConsonantVowel(String string) {
+        int countVowel = 0;
+        int countConsonant = 0;
+        for (int i = 0; i < string.length(); i++) {
+            char c = string.charAt(i);
+            if (Character.isDigit(string.charAt(i))) {
+                continue;
+            } else if (c == 'a' || c == 'o' || c == 'e' || c == 'u' || c == 'i' || c == 'A' || c == 'O' || c == 'E' || c == 'U' || c == 'I') {
+                countVowel++;
+            } else if ((c > 'a' && c <= 'z') || (c > 'A' && c <= 'Z')) {
+                countConsonant++;
+            }
+        }
+        System.out.format("Số lượng ký tự nguyên âm trong chuỗi %s là: %d\n", string, countVowel);
+        System.out.format("Số lượng ký tự phụ âm trong chuỗi %s là: %d\n", string, countConsonant);
+    }
 }
 
 
