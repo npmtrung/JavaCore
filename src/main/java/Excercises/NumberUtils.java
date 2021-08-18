@@ -252,6 +252,95 @@ public class NumberUtils {
         System.out.format("Số lượng ký tự nguyên âm trong chuỗi %s là: %d\n", string, countVowel);
         System.out.format("Số lượng ký tự phụ âm trong chuỗi %s là: %d\n", string, countConsonant);
     }
+
+    public static int[][] inputMatrix() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Số dòng: ");
+        int r = scanner.nextInt();
+
+        System.out.print("Số cột: ");
+        int c = scanner.nextInt();
+
+        int[][] ret = new int[r][c];
+
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                System.out.format("a[%d,%d]:", i, j);
+                ret[i][j] = scanner.nextInt();
+            }
+        }
+        return ret;
+    }
+
+    public static int[][] generateMatrix(int r, int c, int min, int max) {
+        int[][] ret = new int[r][c];
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                ret[i][j] = (int) Math.floor((Math.random() * (max - min)) + min);
+            }
+        }
+
+        return ret;
+    }
+
+    public static boolean findX(int[][] a, int x) {
+        boolean result = false;
+        for (int i = 0, r = a.length; i < r; i++) {
+            for (int j = 0, c = a[0].length; j < c; j++) {
+                if (x == a[i][j]) {
+                    result = true;
+                    break;
+                }
+            }
+
+        }
+        return result;
+    }
+
+    public static boolean isPrimeNum(int n) {
+        boolean ret = true;
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                ret = false;
+                break;
+            }
+        }
+        return ret;
+    }
+
+    public static boolean isPrimeMatrix(int[][] a) {
+        boolean ret = true;
+        for (int i = 0, r = a.length; i < r; i++) {
+            for (int j = 0, c = a[0].length; j < c; j++) {
+
+                if (!isPrimeNum(a[i][j])) {
+                    ret = false;
+                    break;
+                }
+
+            }
+
+        }
+
+        return ret;
+    }
+
+
+    public static int findMax(int[][] a) {
+        int max = a[0][0];
+        for (int i = 0, r = a.length; i < r; i++) {
+            for (int j = 0, c = a[0].length; j < c; j++) {
+                if (max < a[i][j]) {
+                    max = a[i][j];
+                }
+
+            }
+
+        }
+
+        return max;
+    }
 }
 
 
