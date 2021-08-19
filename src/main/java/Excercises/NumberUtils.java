@@ -273,6 +273,15 @@ public class NumberUtils {
         return ret;
     }
 
+    public static void printMatrix(int[][] a) {
+        for (int i = 0, r = a.length; i < r; i++) {
+            for (int j = 0, c = a[0].length; j < c; j++) {
+                System.out.format("%5d ", a[i][j]);
+            }
+            System.out.println("");
+        }
+    }
+
     public static int[][] generateMatrix(int r, int c, int min, int max) {
         int[][] ret = new int[r][c];
         for (int i = 0; i < r; i++) {
@@ -340,6 +349,95 @@ public class NumberUtils {
         }
 
         return max;
+    }
+
+    public static int sumRow(int[][] a) {
+        Scanner sc = new Scanner(System.in);
+        int row;
+        do {
+            System.out.print("Nhập dòng cần tính tổng: ");
+            row = sc.nextInt();
+        } while (row <= 0);
+        int sumRowd = 0;
+        for (int i = 0, r = a.length; i < r; i++) {
+            sumRowd += a[row - 1][i];
+        }
+        return sumRowd;
+    }
+
+    public static int sumColumn(int[][] a) {
+        Scanner sc = new Scanner(System.in);
+        int column;
+        do {
+            System.out.print("Nhập cột cần tính tổng: ");
+            column = sc.nextInt();
+        } while (column <= 0);
+        int sumColumn = 0;
+        for (int j = 0, c = a[0].length; j < c; j++) {
+            sumColumn += a[j][column - 1];
+        }
+        return sumColumn;
+    }
+
+    public static int sumMainDiagonal(int[][] a) {
+        int sum = 0;
+        for (int i = 0, r = a.length; i < r; i++) {
+            for (int j = 0, c = a[0].length; j < c; j++) {
+                if (i == j) {
+                    sum += a[i][j];
+                }
+            }
+
+        }
+        return sum;
+    }
+
+    public static int sumAuxiliaryDiagonal(int[][] a) {
+        int sum = 0;
+        for (int i = 0, r = a.length; i < r; i++) {
+            sum += a[i][r - 1 - i];
+        }
+        return sum;
+    }
+
+    public static int sumHalfAboveMainDiagonal(int[][] a) {
+        int sum = 0;
+        for (int i = 0, r = a.length; i < r; i++) {
+            for (int j = i, c = a[0].length; j < c; j++) {
+                sum += a[i][j];
+            }
+        }
+        return sum;
+    }
+
+    public static int sumHalfUnderneathMainDiagonal(int[][] a) {
+        int sum = 0;
+        for (int i = 0, r = a.length; i < r; i++) {
+            for (int j = 0, c = a[0].length; j <= i; j++) {
+                sum += a[i][j];
+            }
+        }
+        return sum;
+    }
+
+    public static int sumHalfAboveAuxiliaryDiagonal(int[][] a) {
+        int sum = 0;
+        for (int i = 0, r = a.length; i < r; i++) {
+            for (int j = 0, c = a[0].length; j <= r - 1 - i; j++) {
+                sum += a[i][j];
+            }
+        }
+        return sum;
+    }
+
+    public static int sumHalfUnderneathAuxiliaryDiagonal(int[][] a) {
+        int sum = 0;
+        for (int i = 0, r = a.length; i < r; i++) {
+            for (int j = r - 1 - i, c = a[0].length; j < c; j++) {
+                sum += a[i][j];
+            }
+        }
+        return sum;
     }
 }
 
