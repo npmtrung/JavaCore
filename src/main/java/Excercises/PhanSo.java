@@ -9,6 +9,15 @@ public class PhanSo {
         this.mauSo = mauSo;
     }
 
+    public static PhanSo parseFromString(String str) {
+        String[] parts = str.split("/");
+
+        PhanSo ps = new PhanSo();
+        ps.tuSo = Integer.parseInt(parts[0]);
+        ps.mauSo = Integer.parseInt(parts[1]);
+        return ps;
+    }
+
     public PhanSo() {
     }
 

@@ -1,9 +1,15 @@
 package Excercises;
 
+import java.util.Scanner;
+
 public class Excercise_09 {
     public static void main(String[] args) {
-        PhanSo ps1 = new PhanSo(3, 4);
-        PhanSo ps2 = new PhanSo(5, 10);
+        System.out.print("Nhập phân số 1 (a/b): ");
+        String strPS1 = new Scanner(System.in).nextLine();
+        PhanSo ps1 = PhanSo.parseFromString(strPS1);
+        System.out.println("Nhập phân số 2 (a/b): ");
+        String strPS2 = new Scanner(System.in).nextLine();
+        PhanSo ps2 = PhanSo.parseFromString(strPS2);
         System.out.print("Phân số 1: ");
         ps1.inPhanSo();
         System.out.format(" | Phân số 2: ");
