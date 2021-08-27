@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Excercise_10 {
     public static void main(String[] args) {
+        System.out.println("----- Đơn Thức -----");
         System.out.print("Nhập hệ số a trong đơn thức ax^n: ");
         int a = new Scanner(System.in).nextInt();
         System.out.print("Nhập số mũ n trong đơn thức ax^n: ");
