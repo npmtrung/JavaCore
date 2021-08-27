@@ -20,7 +20,7 @@ public class DonThuc {
         } else if (a == 0) {
             System.out.println("x");
         } else {
-            System.out.println(a + "^" + n);
+            System.out.println(a + "x" + "^" + n);
         }
     }
 
