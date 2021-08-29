@@ -1,4 +1,6 @@
-import Excercises.NumberUtils;
+package Demo;
+
+import Excercises.entities.NumberUtils;
 
 import java.util.Scanner;
 

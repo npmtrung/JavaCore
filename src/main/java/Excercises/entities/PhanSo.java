@@ -1,4 +1,4 @@
-package Excercises;
+package Excercises.entities;
 
 public class PhanSo {
 

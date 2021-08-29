@@ -1,5 +1,7 @@
 package Excercises;
 
+import Excercises.entities.NumberUtils;
+
 import java.util.Scanner;
 
 public class Excercise_06 {

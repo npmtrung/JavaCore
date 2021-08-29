@@ -1,5 +1,7 @@
 package Excercises;
 
+import Excercises.entities.PhanSo;
+
 import java.util.Scanner;
 
 public class Excercise_09 {

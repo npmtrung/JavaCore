@@ -1,4 +1,4 @@
-package Excercises;
+package Excercises.entities;
 
 import java.security.PublicKey;
 

@@ -1,24 +1,26 @@
 package Excercises;
 
+import Excercises.entities.NumberUtils;
+
 import java.util.Scanner;
 
 public class Excercise_07 {
     public static void main(String[] args) {
 
-        System.out.print("Nhập số dòng của Matrix: ");
+        System.out.print("Nhập số dòng của Demo.Matrix: ");
         int row = new Scanner(System.in).nextInt();
-        System.out.print("Nhập số cột của Matrix: ");
+        System.out.print("Nhập số cột của Demo.Matrix: ");
         int column = new Scanner(System.in).nextInt();
-        System.out.print("Nhập giá trị nhỏ nhất của Matrix: ");
+        System.out.print("Nhập giá trị nhỏ nhất của Demo.Matrix: ");
         int min = new Scanner(System.in).nextInt();
-        System.out.print("Nhập giá trị lớn nhất của Matrix: ");
+        System.out.print("Nhập giá trị lớn nhất của Demo.Matrix: ");
         int max = new Scanner(System.in).nextInt();
         int[][] a = NumberUtils.generateMatrix(row, column, min, max);
         NumberUtils.printMatrix(a);
 
         //bài1
         System.out.println("Bài 1");
-        System.out.print("Nhập số cần tìm trong Matrix: ");
+        System.out.print("Nhập số cần tìm trong Demo.Matrix: ");
         Scanner sc = new Scanner(System.in);
         int x = sc.nextInt();
         if (NumberUtils.findX(a, x)) {
