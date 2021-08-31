@@ -83,6 +83,5 @@ public class Excercise_09 {
         System.out.format("\n----------\n");
 
         ps1.soSanhPhanSo(ps2);
-
     }
 }
