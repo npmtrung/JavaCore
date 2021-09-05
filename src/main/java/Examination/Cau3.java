@@ -28,12 +28,12 @@ public class Cau3 {
                 case 8:
                 case 10:
                 case 12:
-                    return 30;
+                    return 31;
                 case 4:
                 case 6:
                 case 9:
                 case 11:
-                    return 31;
+                    return 30;
                 case 2:
                     return 28;
             }

@@ -41,8 +41,7 @@ public class Ticket {
         return new Ticket(tenChuyen, ngayBay, giaVe);
     }
 
-    @Override
-    public String toString() {
+    public String xuatThongTinVe() {
         return "Thông tin chuyến bay: {" +
                 "Tên chuyến: '" + tenChuyen + '\'' +
                 ", ngày bay: " + ngayBay +
