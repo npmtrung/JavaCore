@@ -39,9 +39,9 @@ public class Passenger {
 
     public void nhapThongTinHanhKhach() {
         System.out.print("Nhập tên hành khách: ");
-        this.hoTen = new Scanner(System.in).next();
+        this.hoTen = new Scanner(System.in).nextLine();
         System.out.print("Nhập giới tính: ");
-        this.gioiTinh = new Scanner(System.in).next();
+        this.gioiTinh = new Scanner(System.in).nextLine();
         System.out.print("Nhập tuổi: ");
         this.tuoi = new Scanner(System.in).nextInt();
         System.out.print("Nhập số lượng vé: ");

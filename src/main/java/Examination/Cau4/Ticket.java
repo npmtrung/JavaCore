@@ -32,7 +32,7 @@ public class Ticket {
 
     public Ticket nhapThongTinChuyenBay() {
         System.out.print("Nhập tên chuyến bay: ");
-        this.tenChuyen = new Scanner(System.in).next();
+        this.tenChuyen = new Scanner(System.in).nextLine();
         System.out.print("Nhập ngày bay (Định dạng dd/MM/yyyy HH:mm): ");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
         this.ngayBay = LocalDateTime.parse(new Scanner(System.in).nextLine(), formatter);
