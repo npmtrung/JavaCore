@@ -49,7 +49,7 @@ public class Passenger {
         Ticket[] danhSachVe = new Ticket[soLuongVe];
         if (soLuongVe > 0) {
             for (int i = 0; i < soLuongVe; i++) {
-                System.out.println("Ticket " + (i + 1));
+                System.out.println("Vé thứ " + (i + 1));
                 danhSachVe[i] = new Ticket();
                 danhSachVe[i].nhapThongTinChuyenBay();
             }
@@ -59,53 +59,53 @@ public class Passenger {
 
     public String xuatThongTinHanhKhach() {
         String thongTinHanhKhach = "";
-        thongTinHanhKhach += "Full name: " + this.hoTen + "\nGender: " + this.gioiTinh + "\nAge: " + this.tuoi + "\n=====Ticket list=====\n";
+        thongTinHanhKhach += "Tên hành khách: " + this.hoTen + "\nGiới tính: " + this.gioiTinh + "\nTuổi: " + this.tuoi + "\n----- Danh sách vé -----\n";
         for (int i = 0; i < this.danhSachVe.length; i++) {
-            thongTinHanhKhach += (i + 1) + " " + this.danhSachVe[i].xuatThongTinVe();
+            thongTinHanhKhach += (i + 1) + " - " + this.danhSachVe[i].xuatThongTinVe();
         }
         return thongTinHanhKhach;
     }
 
     public int tongGiaVe() {
-        int totalFee = 0;
+        int tongGiaVe = 0;
         for (int i = 0; i < this.danhSachVe.length; i++) {
-            totalFee += this.danhSachVe[i].getGiaVe();
+            tongGiaVe = tongGiaVe + this.danhSachVe[i].getGiaVe();
         }
-        return totalFee;
+        return tongGiaVe;
     }
 
     public static Passenger[] nhapDSHanhKhach(int n) {
-        Passenger[] listPassenger = new Passenger[n];
+        Passenger[] dsHanhKhach = new Passenger[n];
         for (int i = 0; i < n; i++) {
-            System.out.println("ID = " + (i + 1));
-            listPassenger[i] = new Passenger();
-            listPassenger[i].nhapThongTinHanhKhach();
+            System.out.println("Hành khách " + (i + 1));
+            dsHanhKhach[i] = new Passenger();
+            dsHanhKhach[i].nhapThongTinHanhKhach();
         }
-        return listPassenger;
+        return dsHanhKhach;
     }
 
-    public static void xuatDSHanhKhach(Passenger[] listPassenger) {
-        for (int i = 0; i < listPassenger.length; i++) {
-            System.out.println(i + ". " + listPassenger[i].xuatThongTinHanhKhach());
-            System.out.println("Total ticket fee: " + listPassenger[i].tongGiaVe());
+    public static void xuatDSHanhKhach(Passenger[] dsHanhKhach) {
+        for (int i = 0; i < dsHanhKhach.length; i++) {
+            System.out.println(i + ". " + dsHanhKhach[i].xuatThongTinHanhKhach());
+            System.out.println("Tổng giá vé: " + dsHanhKhach[i].tongGiaVe());
             System.out.println();
         }
     }
 
-    public static void sapXepGiaVeGiamDan(Passenger[] listPassenger) {
-        for (int i = 0; i < listPassenger.length - 1; i++) {
-            for (int j = i + 1; j < listPassenger.length; j++) {
-                if (listPassenger[j].tongGiaVe() > listPassenger[i].tongGiaVe()) {
-                    Passenger tmp = listPassenger[i];
-                    listPassenger[i] = listPassenger[j];
-                    listPassenger[j] = tmp;
+    public static void sapXepGiaVeGiamDan(Passenger[] dsHanhKhach) {
+        for (int i = 0; i < dsHanhKhach.length - 1; i++) {
+            for (int j = i + 1; j < dsHanhKhach.length; j++) {
+                if (dsHanhKhach[j].tongGiaVe() > dsHanhKhach[i].tongGiaVe()) {
+                    Passenger tmp = dsHanhKhach[i];
+                    dsHanhKhach[i] = dsHanhKhach[j];
+                    dsHanhKhach[j] = tmp;
                 }
             }
         }
 
-        for (int i = 0; i < listPassenger.length; i++) {
-            System.out.println("Customer " + (i + 1));
-            System.out.println(listPassenger[i].xuatThongTinHanhKhach());
+        for (int i = 0; i < dsHanhKhach.length; i++) {
+            System.out.println("Hành khách " + (i + 1));
+            System.out.println(dsHanhKhach[i].xuatThongTinHanhKhach());
         }
     }
 

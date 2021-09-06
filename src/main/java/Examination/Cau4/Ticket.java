@@ -42,31 +42,30 @@ public class Ticket {
     }
 
     public String xuatThongTinVe() {
-        return "Name: " + getTenChuyen() + "\tDate: " + getNgayBay().toString() + "\tPrice: " + getGiaVe() + "\n";
+        return "Tên chuyến bay: " + getTenChuyen() + "\tNgày bay: " + getNgayBay().toString() + "\tGiá vé: " + getGiaVe() + "\n";
     }
 
     public Ticket[] nhapDSVe() {
-        Scanner input = new Scanner(System.in);
-        System.out.print("- Ticket quantity: ");
-        int quantityTicket = input.nextInt();
-        Ticket[] listTicket = new Ticket[quantityTicket];
-        Ticket ticket = new Ticket();
+        System.out.print("Số lượng vé: ");
+        int soLuongVe = new Scanner(System.in).nextInt();
+        Ticket[] listTicket = new Ticket[soLuongVe];
+        Ticket ve = new Ticket();
         for (int i = 0; i < listTicket.length; i++) {
-            listTicket[i] = ticket.nhapThongTinChuyenBay();
+            listTicket[i] = ve.nhapThongTinChuyenBay();
         }
         return listTicket;
     }
 
-    public String xuatDSVe() {
-        Ticket ticket = new Ticket();
-        String listTicket = " ";
+        public String xuatDSVe() {
+        Ticket ve = new Ticket();
+        String dsVe = " ";
         for (int i = 0; i < nhapDSVe().length; i++) {
-            ticket = nhapDSVe()[i];
-            listTicket = listTicket + (i + 1) + ". " + ticket.getTenChuyen() + " " +
-                    ticket.getNgayBay().toString() + " " + ticket.getGiaVe() + "\n";
+            ve = nhapDSVe()[i];
+            dsVe = dsVe + (i + 1) + ". " + ve.getTenChuyen() + " " +
+                    ve.getNgayBay().toString() + " " + ve.getGiaVe() + "\n";
             System.out.println();
         }
-        return listTicket;
+        return dsVe;
     }
 
     public Double getTongGiaVe(Ticket[] DSVe) {

@@ -7,11 +7,13 @@ public class Cau4 {
         System.out.print("Nhập số lượng hành khách: ");
         int soLuong = new Scanner(System.in).nextInt();
 
-        System.out.println("Nhập thông tin hành khách");
+        System.out.println("Nhập thông tin hành khách: ");
         Passenger[] dsHanhKhach = Passenger.nhapDSHanhKhach(soLuong);
+
+        System.out.println("Danh sách hành khách: ");
         Passenger.xuatDSHanhKhach(dsHanhKhach);
 
-        System.out.println("Danh sách hành khách");
+        System.out.println("Danh sách hành khách sau khi sắp xếp: ");
         Passenger[] dsSapXep = dsHanhKhach;
         Passenger.sapXepGiaVeGiamDan(dsSapXep);
     }
