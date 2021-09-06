@@ -86,7 +86,7 @@ public class Passenger {
 
     public static void xuatDSHanhKhach(Passenger[] dsHanhKhach) {
         for (int i = 0; i < dsHanhKhach.length; i++) {
-            System.out.println(i + ". " + dsHanhKhach[i].xuatThongTinHanhKhach());
+            System.out.println(dsHanhKhach[i].xuatThongTinHanhKhach());
             System.out.println("Tổng giá vé: " + dsHanhKhach[i].tongGiaVe());
             System.out.println();
         }
