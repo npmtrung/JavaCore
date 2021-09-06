@@ -65,5 +65,49 @@ public class Passenger {
         }
         return thongTinHanhKhach;
     }
+
+    public int tongGiaVe() {
+        int totalFee = 0;
+        for (int i = 0; i < this.danhSachVe.length; i++) {
+            totalFee += this.danhSachVe[i].getGiaVe();
+        }
+        return totalFee;
+    }
+
+    public static Passenger[] nhapDSHanhKhach(int n) {
+        Passenger[] listPassenger = new Passenger[n];
+        for (int i = 0; i < n; i++) {
+            System.out.println("ID = " + (i + 1));
+            listPassenger[i] = new Passenger();
+            listPassenger[i].nhapThongTinHanhKhach();
+        }
+        return listPassenger;
+    }
+
+    public static void xuatDSHanhKhach(Passenger[] listPassenger) {
+        for (int i = 0; i < listPassenger.length; i++) {
+            System.out.println(i + ". " + listPassenger[i].xuatThongTinHanhKhach());
+            System.out.println("Total ticket fee: " + listPassenger[i].tongGiaVe());
+            System.out.println();
+        }
+    }
+
+    public static void sapXepGiaVeGiamDan(Passenger[] listPassenger) {
+        for (int i = 0; i < listPassenger.length - 1; i++) {
+            for (int j = i + 1; j < listPassenger.length; j++) {
+                if (listPassenger[j].tongGiaVe() > listPassenger[i].tongGiaVe()) {
+                    Passenger tmp = listPassenger[i];
+                    listPassenger[i] = listPassenger[j];
+                    listPassenger[j] = tmp;
+                }
+            }
+        }
+
+        for (int i = 0; i < listPassenger.length; i++) {
+            System.out.println("Customer " + (i + 1));
+            System.out.println(listPassenger[i].xuatThongTinHanhKhach());
+        }
+    }
+
 }
 
