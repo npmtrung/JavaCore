@@ -1,5 +1,6 @@
 package Examination.Cau4;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Passenger {
@@ -28,6 +29,7 @@ public class Passenger {
     public int getTuoi() {
         return this.tuoi;
     }
+
 
     public Ticket[] danhSachVe() {
         return this.danhSachVe;
@@ -102,7 +104,6 @@ public class Passenger {
                 }
             }
         }
-
         for (int i = 0; i < dsHanhKhach.length; i++) {
             System.out.println("Hành khách " + (i + 1));
             System.out.println(dsHanhKhach[i].xuatThongTinHanhKhach());

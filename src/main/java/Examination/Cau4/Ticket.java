@@ -45,7 +45,7 @@ public class Ticket {
         return "Tên chuyến bay: " + getTenChuyen() + "\tNgày bay: " + getNgayBay().toString() + "\tGiá vé: " + getGiaVe() + "\n";
     }
 
-    public Ticket[] nhapDSVe() {
+    public static Ticket[] nhapDSVe() {
         System.out.print("Số lượng vé: ");
         int soLuongVe = new Scanner(System.in).nextInt();
         Ticket[] listTicket = new Ticket[soLuongVe];
