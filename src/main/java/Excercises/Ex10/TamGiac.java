@@ -1,9 +1,5 @@
 package Excercises.Ex10;
 
-import Excercises.entities.Diem;
-
-import java.util.Scanner;
-
 public class TamGiac {
     //    private int a;
 //    private int b;
