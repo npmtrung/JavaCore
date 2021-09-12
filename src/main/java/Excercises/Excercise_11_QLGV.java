@@ -6,7 +6,7 @@ import Excercises.entities.GiangVienThinhGiang;
 
 import java.util.Scanner;
 
-public class Excercise_11 {
+public class Excercise_11_QLGV {
     public static void main(String[] args) {
 
         GiangVien[] list = {

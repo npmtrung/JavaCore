@@ -4,7 +4,7 @@ import Excercises.entities.PhanSo;
 
 import java.util.Scanner;
 
-public class Excercise_09 {
+public class Excercise_09_PhanSo {
     public static void main(String[] args) {
         System.out.print("Nhập phân số 1 (a/b): ");
         String strPS1 = new Scanner(System.in).nextLine();

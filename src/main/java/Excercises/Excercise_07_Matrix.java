@@ -4,7 +4,7 @@ import Excercises.entities.NumberUtils;
 
 import java.util.Scanner;
 
-public class Excercise_07 {
+public class Excercise_07_Matrix {
     public static void main(String[] args) {
 
         System.out.print("Nhập số dòng của Demo.Matrix: ");

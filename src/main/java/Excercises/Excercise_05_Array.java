@@ -4,7 +4,7 @@ import Excercises.entities.NumberUtils;
 
 import java.util.Scanner;
 
-public class Excercise_05 {
+public class Excercise_05_Array {
     public static void main(String[] args) {
         //bài2b
         System.out.println("Bài 2b");
