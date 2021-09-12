@@ -1,12 +1,10 @@
-package Excercises;
+package Excercises.Ex10;
 
 import Excercises.entities.Diem;
-import Excercises.entities.DonThuc;
-import Excercises.entities.TamGiac;
 
 import java.util.Scanner;
 
-public class Excercise_10 {
+public class Excercise_10_DonThuc {
     public static void main(String[] args) {
         System.out.println("----- Đơn Thức -----");
         System.out.print("Nhập hệ số a trong đơn thức ax^n: ");

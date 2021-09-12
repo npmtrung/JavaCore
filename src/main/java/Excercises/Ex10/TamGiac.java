@@ -1,4 +1,6 @@
-package Excercises.entities;
+package Excercises.Ex10;
+
+import Excercises.entities.Diem;
 
 import java.util.Scanner;
 

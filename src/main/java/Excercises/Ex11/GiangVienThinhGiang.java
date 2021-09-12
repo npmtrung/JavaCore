@@ -1,4 +1,4 @@
-package Excercises.entities;
+package Excercises.Ex11;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package Excercises.entities;
+package Excercises.Ex10;
 
 public class DonThuc {
     private int a;

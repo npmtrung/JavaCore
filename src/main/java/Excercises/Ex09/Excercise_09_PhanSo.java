@@ -1,6 +1,6 @@
-package Excercises;
+package Excercises.Ex09;
 
-import Excercises.entities.PhanSo;
+import Excercises.Ex09.PhanSo;
 
 import java.util.Scanner;
 

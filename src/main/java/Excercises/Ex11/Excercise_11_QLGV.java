@@ -1,10 +1,4 @@
-package Excercises;
-
-import Excercises.entities.GiangVien;
-import Excercises.entities.GiangVienCoHuu;
-import Excercises.entities.GiangVienThinhGiang;
-
-import java.util.Scanner;
+package Excercises.Ex11;
 
 public class Excercise_11_QLGV {
     public static void main(String[] args) {
