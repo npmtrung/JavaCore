@@ -1,38 +1,35 @@
 package Excercises.Ex12;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Excercise_12_QLBDS {
     public static void main(String[] args) {
-        int choose;
         Scanner scanner = new Scanner(System.in);
-        ArrayList<MiengDat> arrMiengDat = new ArrayList<>();
-        MiengDat miengDat;
-
-        System.out.print("Nhập số lượng miếng đất: ");
-        int soMiengDat = scanner.nextInt();
-
-        System.out.println("Nhập thông tin miếng đất: ");
-        System.out.print("Chọn hình dạng miếng đất (0 - đất hình chữ nhật, "
-                + "1 - đất tam giác, 2 - đất hình vuông, 3 - đất hình tròn): ");
-        choose = scanner.nextInt();
-        switch (choose) {
-            case 0:
-                miengDat = new MiengDatHinhChuNhat();
-                miengDat.nhap();
-
-                break;
+        System.out.print("Chọn hình dạng miếng đất(1 - đất hình chữ nhật, 2 - đất hình vuông, 3 - đất hình tròn, 4 - đất hình tam giác): ");
+        int option = scanner.nextInt();
+        switch (option) {
             case 1:
-                miengDat = new MiengDatHinhTamGiac();
-                miengDat.nhap();
-                miengDat.tinhDienTich();
-                miengDat.tinhTien();
+                MiengDat chuNhat = new MiengDatHinhChuNhat();
+                chuNhat.input();
+                System.out.println(chuNhat.toString());
+                break;
+            case 2:
+                MiengDat vuong = new MiengDatHinhVuong();
+                vuong.input();
+                System.out.println(vuong.toString());
+                break;
+            case 3:
+                MiengDat tron = new MiengDatHinhTron();
+                tron.input();
+                System.out.println(tron.toString());
+                break;
+            case 4:
+                MiengDat tamGiac = new MiengDatHinhTamGiac();
+                tamGiac.input();
+                System.out.println(tamGiac.toString());
                 break;
             default:
                 System.out.println("Bạn nhập không đúng. Mời nhập lại");
                 break;
         }
-
     }
 }
