@@ -1,56 +1,60 @@
 package Excercises.Ex12;
+
 import java.util.Scanner;
 
 public class MiengDatHinhTamGiac extends MiengDat {
-    private int point1, point2;
+    private Diem p1;
+    private Diem p2;
+    private Diem p3;
 
     public MiengDatHinhTamGiac() {
+        this.p1 = Diem.generate();
+        this.p2 = Diem.generate();
+        this.p3 = Diem.generate();
     }
 
-    public MiengDatHinhTamGiac(int point, int point1, int point2) {
-        super(point);
-        this.point1 = point1;
-        this.point2 = point2;
+    public MiengDatHinhTamGiac(Diem p1, Diem p2, Diem p3) {
+        this.p1 = p1;
+        this.p2 = p2;
+        this.p3 = p3;
     }
 
-    public double chuVi() {
-        int result = 0;
-        result += this.point1 + this.point2 + this.point;
-        return result;
+    public double calculatePerimeter() {
+        double a = this.p1.distance(this.p2);
+        double b = this.p1.distance(this.p3);
+        double c = this.p2.distance(this.p3);
+        return a + b + c;
     }
 
-    public double area() {
-        double dienTich;
-        double p = chuVi() / 2;
-        dienTich = Math.sqrt(p * (p - this.point1) * (p - this.point2) * (p - this.point));
-        return dienTich;
+    public double calculateArea() {
+        double a = this.p1.distance(this.p2);
+        double b = this.p1.distance(this.p3);
+        double c = this.p2.distance(this.p3);
+        double p = (a + b + c) / 2;
+        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+    }
+
+    @Override
+    public void input() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập điểm A: ");
+        int p1 = scanner.nextInt();
+        System.out.print("Nhập điểm B: ");
+        int p2 = scanner.nextInt();
+        System.out.print("Nhập điểm C: ");
+        int p3 = scanner.nextInt();
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Miếng đất hình tam giác có thông tin (");
-        sb.append("đỉnh A: ").append(point1);
-        sb.append(", đỉnh B: ").append(point2);
-        sb.append(", đỉnh C: ").append(point);
-        sb.append(" ,giá đất: ").append(gia);
-        sb.append(')');
+        MiengDatHinhTamGiac triangle = new MiengDatHinhTamGiac();
+        final StringBuilder sb = new StringBuilder("Miếng đất hình tam giác {\n");
+        sb
+                .append("Cạnh A = ").append("(").append(p1.getX()).append(", ").append(p1.getY()).append(")")
+                .append(", cạnh B = ").append("(").append(p2.getX()).append(", ").append(p2.getY()).append(")")
+                .append(", cạnh C = ").append("(").append(p3.getX()).append(", ").append(p3.getY()).append(")");
+        sb.append(", diện tích = ").append(calculateArea());
+        sb.append('}');
         return sb.toString();
-    }
-
-    public int giaDat(int gia1m) {
-        return (int) (gia1m * area());
-    }
-
-    public void input() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhập đỉnh A: ");
-        this.point1 = scanner.nextInt();
-        System.out.print("Nhập đỉnh B: ");
-        this.point2 = scanner.nextInt();
-        System.out.print("Nhập đỉnh C: ");
-        this.point = scanner.nextInt();
-        System.out.print("Nhập giá 1m2 đất: ");
-        int gia1m = scanner.nextInt();
-        this.gia = giaDat(gia1m);
     }
 }

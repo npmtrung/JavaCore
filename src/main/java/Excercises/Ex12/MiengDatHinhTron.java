@@ -2,39 +2,47 @@ package Excercises.Ex12;
 
 import java.util.Scanner;
 
+import java.util.Scanner;
+
 public class MiengDatHinhTron extends MiengDat {
-    private int banKinh;
+    private Diem center;
+    private int radius;
 
     public MiengDatHinhTron() {
     }
 
-    public MiengDatHinhTron(int point, int banKinh) {
-        super(point);
-        this.banKinh = banKinh;
+    public MiengDatHinhTron(Diem center, int radius) {
+        this.center = center;
+        this.radius = radius;
+    }
+
+    @Override
+    public void input() {
+        System.out.println("Nhập tọa độ tâm đường tròn: ");
+        System.out.print("x = ");
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt();
+        System.out.print("y = ");
+        int y = scanner.nextInt();
+        this.center = new Diem(x, y);
+        System.out.print("Nhập bán kính: ");
+        this.radius = scanner.nextInt();
+    }
+
+    //Tính diện tích đất
+    @Override
+    public double calculateArea() {
+        return Math.PI * this.radius * this.radius;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Miếng đất hình tròn có thông tin (");
-        sb.append("bán kính: ").append(banKinh);
-        sb.append(", tâm: ").append(point);
-        sb.append(" ,giá đất: ").append(gia);
-        sb.append(')');
+        MiengDatHinhTron circle = new MiengDatHinhTron();
+        final StringBuffer sb = new StringBuffer("Miếng đất hình tròn {");
+        sb.append("Tọa độ tâm = ").append(center.toString());
+        sb.append(", bán kính = ").append(radius);
+        sb.append(" ,diện tích: ").append(calculateArea());
+        sb.append('}');
         return sb.toString();
-    }
-
-    public int giaDat(int gia1m) {
-        return (int) (gia1m * (this.banKinh + this.banKinh) * (this.banKinh + this.banKinh) * Math.PI);
-    }
-
-    public void input() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhập tâm của miếng đất: ");
-        this.point = scanner.nextInt();
-        System.out.print("Nhập bán kính miếng đất: ");
-        this.banKinh = scanner.nextInt();
-        System.out.print("Nhập giá 1m2 đất: ");
-        int gia1m = scanner.nextInt();
-        this.gia = giaDat(gia1m);
     }
 }

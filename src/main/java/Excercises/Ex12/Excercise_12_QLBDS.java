@@ -1,35 +1,47 @@
 package Excercises.Ex12;
+
 import java.util.Scanner;
 
 public class Excercise_12_QLBDS {
     public static void main(String[] args) {
+        System.out.print("Nhập số lượng mảnh đất: ");
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Chọn hình dạng miếng đất(1 - đất hình chữ nhật, 2 - đất hình vuông, 3 - đất hình tròn, 4 - đất hình tam giác): ");
-        int option = scanner.nextInt();
-        switch (option) {
+        int n = scanner.nextInt();
+
+        MiengDat[] list = new MiengDat[n];
+        for (int i = 0; i < n; i++) {
+            System.out.format("Mảnh đất thứ %d\n", i + 1);
+            System.out.print("Loại hình mảnh đất (1. Vuông / 2. Chữ Nhật / 3. Tròn / 4. Tam giác): ");
+            int choose = scanner.nextInt();
+            list[i] = createShape(choose);
+            list[i].input();
+        }
+        for (MiengDat ls : list) {
+            System.out.println(ls.toString());
+        }
+
+        double total = 0;
+        for (int i = 0; i < n; i++) {
+            total += list[i].calculateArea();
+        }
+
+        System.out.print("Nhập giá 1 m2: ");
+        int unitPrice = scanner.nextInt();
+        System.out.format("Tổng tiền = %f\n", total * unitPrice);
+    }
+
+    private static MiengDat createShape(int choose) {
+        switch (choose) {
             case 1:
-                MiengDat chuNhat = new MiengDatHinhChuNhat();
-                chuNhat.input();
-                System.out.println(chuNhat.toString());
-                break;
+                return new MiengDatHinhVuong();
             case 2:
-                MiengDat vuong = new MiengDatHinhVuong();
-                vuong.input();
-                System.out.println(vuong.toString());
-                break;
+                return new MiengDatHinhChuNhat();
             case 3:
-                MiengDat tron = new MiengDatHinhTron();
-                tron.input();
-                System.out.println(tron.toString());
-                break;
+                return new MiengDatHinhTron();
             case 4:
-                MiengDat tamGiac = new MiengDatHinhTamGiac();
-                tamGiac.input();
-                System.out.println(tamGiac.toString());
-                break;
+                return new MiengDatHinhTamGiac();
             default:
-                System.out.println("Bạn nhập không đúng. Mời nhập lại");
-                break;
+                return null;
         }
     }
 }

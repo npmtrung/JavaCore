@@ -3,38 +3,52 @@ package Excercises.Ex12;
 import java.util.Scanner;
 
 public class MiengDatHinhChuNhat extends MiengDat {
+    private Diem topLeft;
+    private int width, height;
+
     public MiengDatHinhChuNhat() {
     }
 
-    public MiengDatHinhChuNhat(int chieuDai, int chieuRong, int point) {
-        super(chieuDai, chieuRong, point);
+    public MiengDatHinhChuNhat(Diem topLeft, int width, int height) {
+        this.topLeft = topLeft;
+        this.width = width;
+        this.height = height;
+    }
+
+
+    @Override
+    public void input() {
+        System.out.println("Nhập tọa độ điểm trái trên: ");
+        System.out.print("x = ");
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt();
+        System.out.print("y = ");
+        int y = scanner.nextInt();
+        this.topLeft = new Diem(x, y);
+
+        System.out.print("Nhập chiều dài: ");
+        this.height = scanner.nextInt();
+        System.out.print("Nhập chiều rộng: ");
+        this.width = scanner.nextInt();
+    }
+
+    //Tính diện tích đất
+    @Override
+    public double calculateArea() {
+        return this.width * this.height;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Miếng đất hình chữ nhật có thông tin (");
-        sb.append("dài: ").append(chieuDai);
-        sb.append(", rộng: ").append(chieuRong);
-        sb.append(", điểm trái trên: ").append(point);
-        sb.append(" ,giá đất: ").append(gia);
-        sb.append(')');
+        MiengDatHinhChuNhat rectangle = new MiengDatHinhChuNhat();
+        final StringBuffer sb = new StringBuffer("Miếng đất hình chữ nhật {");
+        sb.append("Điểm trái trên = ").append(topLeft.toString());
+        sb.append(", chiều dài = ").append(height);
+        sb.append(", chiều rộng = ").append(width);
+        sb.append(" ,diện tích: ").append(calculateArea());
+        sb.append('}');
         return sb.toString();
     }
 
-    public int giaDat(int gia1m) {
-        return this.chieuDai * this.chieuRong * gia1m;
-    }
 
-    public void input() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Nhập chiều dài: ");
-        this.chieuDai = scanner.nextInt();
-        System.out.print("Nhập chiều rộng: ");
-        this.chieuRong = scanner.nextInt();
-        System.out.print("Nhập điểm trái trên: ");
-        this.point = scanner.nextInt();
-        System.out.print("Nhập giá 1m2 đất: ");
-        int gia1m = scanner.nextInt();
-        this.gia = giaDat(gia1m);
-    }
 }
