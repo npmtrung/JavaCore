@@ -19,10 +19,10 @@ public class MiengDatHinhChuNhat extends MiengDat {
     @Override
     public void input() {
         System.out.println("Nhập tọa độ điểm trái trên: ");
-        System.out.print("x = ");
+        System.out.print("x: ");
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
-        System.out.print("y = ");
+        System.out.print("y: ");
         int y = scanner.nextInt();
         this.topLeft = new Diem(x, y);
 
@@ -42,13 +42,11 @@ public class MiengDatHinhChuNhat extends MiengDat {
     public String toString() {
         MiengDatHinhChuNhat rectangle = new MiengDatHinhChuNhat();
         final StringBuffer sb = new StringBuffer("Miếng đất hình chữ nhật {");
-        sb.append("Điểm trái trên = ").append(topLeft.toString());
-        sb.append(", chiều dài = ").append(height);
-        sb.append(", chiều rộng = ").append(width);
+        sb.append("Điểm trái trên: ").append(topLeft.toString());
+        sb.append(", chiều dài: ").append(height);
+        sb.append(", chiều rộng: ").append(width);
         sb.append(" ,diện tích: ").append(calculateArea());
         sb.append('}');
         return sb.toString();
     }
-
-
 }

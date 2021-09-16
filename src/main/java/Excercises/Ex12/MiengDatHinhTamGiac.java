@@ -19,13 +19,6 @@ public class MiengDatHinhTamGiac extends MiengDat {
         this.p3 = p3;
     }
 
-    public double calculatePerimeter() {
-        double a = this.p1.distance(this.p2);
-        double b = this.p1.distance(this.p3);
-        double c = this.p2.distance(this.p3);
-        return a + b + c;
-    }
-
     public double calculateArea() {
         double a = this.p1.distance(this.p2);
         double b = this.p1.distance(this.p3);
@@ -50,10 +43,10 @@ public class MiengDatHinhTamGiac extends MiengDat {
         MiengDatHinhTamGiac triangle = new MiengDatHinhTamGiac();
         final StringBuilder sb = new StringBuilder("Miếng đất hình tam giác {\n");
         sb
-                .append("Cạnh A = ").append("(").append(p1.getX()).append(", ").append(p1.getY()).append(")")
-                .append(", cạnh B = ").append("(").append(p2.getX()).append(", ").append(p2.getY()).append(")")
-                .append(", cạnh C = ").append("(").append(p3.getX()).append(", ").append(p3.getY()).append(")");
-        sb.append(", diện tích = ").append(calculateArea());
+                .append("Cạnh A: ").append("(").append(p1.getX()).append(", ").append(p1.getY()).append(")")
+                .append(", cạnh B: ").append("(").append(p2.getX()).append(", ").append(p2.getY()).append(")")
+                .append(", cạnh C: ").append("(").append(p3.getX()).append(", ").append(p3.getY()).append(")");
+        sb.append(", diện tích: ").append(calculateArea());
         sb.append('}');
         return sb.toString();
     }

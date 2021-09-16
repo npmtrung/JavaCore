@@ -19,10 +19,10 @@ public class MiengDatHinhTron extends MiengDat {
     @Override
     public void input() {
         System.out.println("Nhập tọa độ tâm đường tròn: ");
-        System.out.print("x = ");
+        System.out.print("x: ");
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
-        System.out.print("y = ");
+        System.out.print("y: ");
         int y = scanner.nextInt();
         this.center = new Diem(x, y);
         System.out.print("Nhập bán kính: ");
@@ -39,8 +39,8 @@ public class MiengDatHinhTron extends MiengDat {
     public String toString() {
         MiengDatHinhTron circle = new MiengDatHinhTron();
         final StringBuffer sb = new StringBuffer("Miếng đất hình tròn {");
-        sb.append("Tọa độ tâm = ").append(center.toString());
-        sb.append(", bán kính = ").append(radius);
+        sb.append("Tọa độ tâm: ").append(center.toString());
+        sb.append(", bán kính: ").append(radius);
         sb.append(" ,diện tích: ").append(calculateArea());
         sb.append('}');
         return sb.toString();

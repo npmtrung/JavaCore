@@ -25,9 +25,9 @@ public class Excercise_12_QLBDS {
             total += list[i].calculateArea();
         }
 
-        System.out.print("Nhập giá 1 m2: ");
+        System.out.print("Nhập giá 1m2: ");
         int unitPrice = scanner.nextInt();
-        System.out.format("Tổng tiền = %f\n", total * unitPrice);
+        System.out.format("Tổng tiền: %f\n", total * unitPrice);
     }
 
     private static MiengDat createShape(int choose) {

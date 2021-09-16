@@ -17,10 +17,10 @@ public class MiengDatHinhVuong extends MiengDat {
     @Override
     public void input() {
         System.out.println("Nhập tọa độ điểm trái trên: ");
-        System.out.print("x = ");
+        System.out.print("x: ");
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
-        System.out.print("y = ");
+        System.out.print("y: ");
         int y = scanner.nextInt();
         this.topLeft = new Diem(x, y);
 
@@ -37,8 +37,8 @@ public class MiengDatHinhVuong extends MiengDat {
     public String toString() {
         MiengDatHinhVuong square = new MiengDatHinhVuong();
         final StringBuffer sb = new StringBuffer("Miếng đất hình vuông {");
-        sb.append("Điểm trái trên = ").append(topLeft.toString());
-        sb.append(", chiều rộng = ").append(width);
+        sb.append("Điểm trái trên: ").append(topLeft.toString());
+        sb.append(", chiều rộng: ").append(width);
         sb.append(" ,diện tích: ").append(calculateArea());
         sb.append('}');
         return sb.toString();
