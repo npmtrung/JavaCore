@@ -11,7 +11,7 @@ public class Excercise_13 {
             if (canNang <= 0) throw new CheckException("Cân nặng không hợp lệ");
             System.out.print("Nhập chiều cao(m): ");
             double chieuCao = scanner.nextDouble();
-            if (chieuCao <= 0) throw new CheckException("Cân nặng không hợp lệ");
+            if (chieuCao <= 0) throw new CheckException("Chiều cao không hợp lệ");
             BMI.calculateBMI(canNang, chieuCao);
         } catch (Exception e) {
             e.printStackTrace();
