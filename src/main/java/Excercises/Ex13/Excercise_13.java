@@ -2,10 +2,10 @@ package Excercises.Ex13;
 
 import java.util.Scanner;
 
-import static Excercises.Ex13.CheckException.isDouble;
+import static Excercises.Ex13.CheckBMIException.isDouble;
 
 public class Excercise_13 {
-    public static void main(String[] args) throws CheckException {
+    public static void main(String[] args) throws CheckBMIException {
         Scanner scanner = new Scanner(System.in);
         try {
             double tempCanNang, tempChieuCao;
@@ -14,17 +14,17 @@ public class Excercise_13 {
             if (isDouble(canNang)) {
                 tempCanNang = Double.parseDouble(canNang);
             } else {
-                throw new CheckException("Cân nặng không đúng định dạng");
+                throw new CheckBMIException("Cân nặng không đúng định dạng");
             }
-            if (tempCanNang <= 0) throw new CheckException("Cân nặng không hợp lệ");
+            if (tempCanNang <= 0) throw new CheckBMIException("Cân nặng không hợp lệ");
             System.out.print("Nhập chiều cao(m): ");
             String chieuCao = scanner.nextLine();
             if (isDouble(chieuCao)) {
                 tempChieuCao = Double.parseDouble(chieuCao);
             } else {
-                throw new CheckException("Chiều cao không đúng định dạng");
+                throw new CheckBMIException("Chiều cao không đúng định dạng");
             }
-            if (tempChieuCao <= 0) throw new CheckException("Chiều cao không hợp lệ");
+            if (tempChieuCao <= 0) throw new CheckBMIException("Chiều cao không hợp lệ");
             BMI.calculateBMI(tempCanNang, tempChieuCao);
         } catch (Exception e) {
             e.printStackTrace();

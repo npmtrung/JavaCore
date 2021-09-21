@@ -1,10 +1,11 @@
 package Excercises.Ex13;
 
-public class CheckException extends Exception{
-    public CheckException(String message) {
+public class CheckBMIException extends RuntimeException {
+    public CheckBMIException(String message) {
         super(message);
     }
-    public static boolean isDouble(String x) { //check số kiểu double
+
+    public static boolean isDouble(String x) {
         if (x == null)
             return false;
         try {
