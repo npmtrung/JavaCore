@@ -1,11 +1,14 @@
 package Excercises.Ex14;
+
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegexEx1 {
     public static void main(String[] args) {
-        String text1 = "Hello java regex 2-12-2018, hello world 12/12/2018";
-        Pattern pattern = Pattern.compile("\\d{1,2}[-|/]\\d{1,2}[-|/]\\d{4}");
+        System.out.print("Nhập chuỗi có chứa ngày tháng năm: ");
+        String text1 = new Scanner(System.in).nextLine();
+        Pattern pattern = Pattern.compile("^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/([0-9][0-9])?[0-9][0-9]$");
         Matcher matcher = pattern.matcher(text1);
 
         System.out.println("Ngày tháng trong chuỗi: " + text1);
