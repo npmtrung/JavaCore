@@ -8,7 +8,7 @@ public class RegexEx1 {
         Pattern pattern = Pattern.compile("\\d{1,2}[-|/]\\d{1,2}[-|/]\\d{4}");
         Matcher matcher = pattern.matcher(text1);
 
-        System.out.println("Ngày tháng trong chuỗi text1: " + text1);
+        System.out.println("Ngày tháng trong chuỗi: " + text1);
         while (matcher.find()) {
             System.out.println(text1.substring(matcher.start(), matcher.end()));
         }
