@@ -16,3 +16,4 @@ public class BMI {
             System.out.println("Chỉ số BMI của bạn: " + bmi + " - Béo phì");
     }
 }
+
