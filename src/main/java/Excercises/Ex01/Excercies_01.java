@@ -1,4 +1,4 @@
-package Excercises;
+package Excercises.Ex01;
 
 import java.time.Year;
 

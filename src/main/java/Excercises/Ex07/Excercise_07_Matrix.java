@@ -1,4 +1,4 @@
-package Excercises;
+package Excercises.Ex07;
 
 import Excercises.entities.NumberUtils;
 

@@ -1,4 +1,4 @@
-package Excercises;
+package Excercises.Ex03;
 
 import java.util.Scanner;
 import java.text.DateFormat;
