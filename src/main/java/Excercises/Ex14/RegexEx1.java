@@ -11,8 +11,9 @@ public class RegexEx1 {
         Pattern pattern = Pattern.compile("([0-2][0-9]|3[0-1])(/|-)(0[0-9]|1[0-2])(/|-)([0-9][0-9])?[0-9][0-9]");
         Matcher matcher = pattern.matcher(text1);
 
+        System.out.print("Ngày tháng năm trong chuỗi: ");
         while (matcher.find()) {
-            System.out.println("Ngày tháng trong chuỗi: " + text1.substring(matcher.start(), matcher.end()));
+            System.out.println(text1.substring(matcher.start(), matcher.end()));
         }
     }
 }
