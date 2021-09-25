@@ -8,7 +8,7 @@ public class RegexEx2 {
     public static void main(String[] args) {
         System.out.print("Nhập chuỗi có chứa email: ");
         String text2 = new Scanner(System.in).nextLine();
-        Pattern pattern = Pattern.compile("\b[A-Za-z]+[A-Za-z0-9_][^-]+(\\.[A-Za-z0-9_]+)*@[^-][A-Za-z]+(\\.[A-Za-z0-9_]{2,}+)*(\\.[A-Za-z]{2,})");
+        Pattern pattern = Pattern.compile("[A-Za-z]+[A-Za-z0-9_][^-]+(\\.[A-Za-z0-9_]+)*@[^-][A-Za-z]+(\\.[A-Za-z0-9_]{2,}+)*(\\.[A-Za-z]{2,})");
         Matcher matcher = pattern.matcher(text2);
 
         System.out.print("Email trong chuỗi: ");
