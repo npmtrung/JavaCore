@@ -8,7 +8,7 @@ public class JavaTextFileIO {
 
         FileOutputStream fosA = new FileOutputStream("A.txt");
         PrintWriter pwA = new PrintWriter(fosA);
-        pwA.println("Example text in A file");
+        pwA.println("Example text in file A");
         pwA.close();
         BufferedReader br = new BufferedReader(new FileReader("A.txt"));
 
@@ -19,7 +19,7 @@ public class JavaTextFileIO {
         }
         FileOutputStream fosB = new FileOutputStream("B.txt");
         PrintWriter pwB = new PrintWriter(fosB);
-        pwB.println("Example text in B file");
+        pwB.println("Example text in file B");
         pwB.close();
         br = new BufferedReader(new FileReader("B.txt"));
 
