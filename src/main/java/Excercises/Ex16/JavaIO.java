@@ -2,7 +2,7 @@ package Excercises.Ex16;
 
 import java.io.File;
 
-public class Excercise_16_JavaIO {
+public class JavaIO {
     public static void main(String[] args) {
         String workdirPath = System.getProperty("user.dir");
         System.out.printf("Workdir: %s\n", workdirPath);
@@ -20,9 +20,8 @@ public class Excercise_16_JavaIO {
             System.out.println(file.isDirectory() ? "Folder" : "File");
         }
 
-        Excercise_16_JavaIO example = new Excercise_16_JavaIO();
+        JavaIO example = new JavaIO();
         example.listChild(workdir, 0);
-
     }
 
     private static void listFilesinDirectory(File dir) {
