@@ -36,6 +36,8 @@ public class JavaTextFileIO {
             while ((lineC = brC.readLine()) != null) {
                 System.out.println(lineC);
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
