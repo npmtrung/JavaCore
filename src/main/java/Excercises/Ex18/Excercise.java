@@ -5,9 +5,9 @@ import java.io.*;
 public class Excercise {
     public static void main(String[] args) {
         try {
-            FileOutputStream fos = new FileOutputStream("originalFile.txt");
+            FileOutputStream fos = new FileOutputStream("originalFile.bin");
             BufferedOutputStream bos = new BufferedOutputStream(fos);
-            bos.write("Text in original file !!!".getBytes());
+            bos.write("Example text".getBytes());
             bos.flush();
             bos.close();
         } catch (IOException e) {
@@ -15,9 +15,9 @@ public class Excercise {
         }
 
         try {
-            FileInputStream fis = new FileInputStream("originalFile.txt");
+            FileInputStream fis = new FileInputStream("originalFile.bin");
             BufferedInputStream bis = new BufferedInputStream(fis);
-            FileOutputStream fosCopy = new FileOutputStream("copiedFile.txt");
+            FileOutputStream fosCopy = new FileOutputStream("copiedFile.bin");
             BufferedOutputStream bosCopy = new BufferedOutputStream(fosCopy);
             int ch;
             ch = bis.read();
